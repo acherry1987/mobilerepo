@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)http://zimjs.com/code/template.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<title>ZIM Template</title>
+
+<!-- for CreateJS and ZIMjs http://zimjs.com - free to modify - Dan Zen 2015 -->
+<!-- see http://zimjs.com/templates for more templates and meta tags -->
+
+<script>var zon = true; // true for comments from zim code</script>
+<script src="ZIM Template_files/zim_2.4.js"></script><!-- add _doc to see code -->
+<script src="ZIM Template_files/createjs-2015.11.26.min.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
+<!-- or can go to zimjs.com and createjs.com for individual modules -->
+
+<style>
+	body {margin:0px; padding:0px; background-color:white;}
+	#myCanvas {position:absolute; background-color:white;}
+</style>
+
+<script>
+
+// SCALING OPTIONS
+// "none"		sets canvas and stage to dimensions and does not scale if window changes
+// "fit"		sets canvas and stage to dimensions and scales to fit inside window size
+// "outside"	sets canvas and stage to dimensions and scales to fit outside window size
+// "full"		sets canvas and stage to window size (canvas is actually set to screen size)
+
+var scaling = "fit"; // fit scales to fit the browser window while keeping the aspect ratio
+var width = 960;
+var height = 640;
+var frame = new zim.Frame(scaling, width, height);
+frame.on("ready", function() {
+	zog("ready from ZIM Frame");
+
+	var stage = frame.stage;
+	var stageW = frame.width;
+	var stageH = frame.height;
+
+	// put your code here (you can delete this code)
+
+	var button = new zim.Button(120,60,"ZIM");
+	zim.centerReg(button, stage); // optionally centering position too
+	button.on("click", function() {
+		zgo("http://zimjs.com");
+	});
+	stage.addChild(button);
+
+
+
+	stage.update();
+
+}); // end of ready
+</script>
+</head>
+
+<body cz-shortcut-listen="true">
+<!-- canvas with id="myCanvas" is made by zim Frame -->
+
+<canvas id="myCanvas" width="960" height="640" style="width: 1299px; height: 866px; left: 292px; top: 0px;"></canvas></body></html>
